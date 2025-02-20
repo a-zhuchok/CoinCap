@@ -9,6 +9,7 @@
   display: flex;
   justify-content: space-around;
 }
+
 .total {
   display: flex;
   align-items: center;
@@ -17,14 +18,22 @@
 .total__title {
   font-weight: 600;
 }
+.total__value {
+  padding-left: 10px;
+  color: #007bff
+}
 .popular-сurrency__title {
-  margin: 0;
-font-weight: 600;
+  font-weight: 600;
+  
 }
 .popular-сurrency__items {
+  margin-top: 15px;
   display: flex;
   gap: 20px;
-
+}
+.popular-currency__item {
+  display: flex;
+  flex-direction: column;
 }
 .currency-list {
   padding: 20px;
@@ -68,5 +77,119 @@ font-weight: 600;
 }
 .currency-list__item--add img  {
   padding: 0;
+  cursor: pointer;
+}
+.currency-list__item--symbol .link {
+  cursor: pointer; 
+  text-decoration: none;
+}
+
+.currency-list__item--symbol .link:hover {
+  text-decoration: underline; 
+  color: #007bff; 
+}
+.currencyInfo {
+  padding-top: 30px;
+}
+.currencyInfo__title, .modalPortfolio__title {
+  font-size: 26px;
+  color: #007bff; 
+  font-weight: bold;
+  
+}
+.countCurrency {
+  background-color: #ddd;
+}
+
+
+
+
+.currencyInfoTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.currencyInfoTable th, .currencyInfoTable td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.currencyInfoTable thead {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.currencyInfoTable tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.currencyInfoTable tbody tr:hover {
+  background-color: #e6f7ff;
+}
+
+.positive {
+  color: green;
+  font-weight: bold;
+}
+
+.negative {
+  color: red;
+  font-weight: bold;
+}
+.currencyInfo__button, .modalPortfolio__button {
+  padding: 7px;
+  margin-top: 30px;
+  cursor: pointer;
+  background-color: #007bff;
+  border: 0px;
+  border-radius: 5px;
+
+}
+.currencyInfo__button a {
+  color: inherit;
+  text-decoration: none;
+}
+.modal {
+  z-index: 1000; 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px; 
+  border-radius: 8px;
+}
+.modal__overlay {
+  z-index: 999; 
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75); 
+}
+.modalPortfolio {
+  
+  padding: 30px;
+ position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modalPortfolio__text {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.modalPortfolio__input {
+
+  min-width: 300px;
+}
+.modalPortfolio__close-button {
+  position: absolute;
+  right: 30px;
+}
+.modalPortfolio__close-button {
   cursor: pointer;
 }
