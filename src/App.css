@@ -5,41 +5,42 @@
   text-align: center;
   font-family: Arial, sans-serif;
 }
+.positive {
+  color: green;
+}
+.negative {
+  color: red;
+}
 .header {
   display: flex;
   justify-content: space-around;
 }
-
 .total {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.total__title {
-  font-weight: 600;
-}
 .total__value {
   padding-left: 10px;
   color: #007bff
 }
-.popular-сurrency__title {
-  font-weight: 600;
-  
+.popularCurrency__title, .portfolio__title, .total__title  {
+  font-weight: 600; 
 }
-.popular-сurrency__items {
+.popularCurrency__items {
   margin-top: 15px;
   display: flex;
   gap: 20px;
 }
-.popular-currency__item {
+.popularCurrency__item {
   display: flex;
   flex-direction: column;
 }
-.currency-list {
+.currencyTable, .currencyInfo {
   padding: 20px;
 }
 
-.currency-list__table {
+.currencyTable__table {
   width: 100%;
   border-collapse: collapse; 
   margin: 20px 0;
@@ -47,76 +48,67 @@
   text-align: center;
 }
 
-.currency-list__table th,
-.currency-list__table td {
+.currencyTable__table th,
+.currencyTable__table td {
   border: 1px solid #ddd; 
   padding: 10px; 
   text-align: center;
 }
 
-.currency-list__table th {
+.currencyTable__table th {
   background-color: #007bff; 
   color: white; 
   text-align: center;
 }
 
-.currency-list__table td {
+.currencyTable__table td {
   text-align: center; 
 }
 
-.currency-list__table tr:nth-child(even) {
+.currencyTable__table tr:nth-child(even) {
   background-color: #f2f2f2; 
 }
 
-.currency-list__table tr:hover {
+.currencyTable__table tr:hover {
   background-color: #ddd; 
   transition: background-color 0.3s ease; 
 }
-.currency-list__item--symbol {
-  color: #0003c2;
-}
-.currency-list__item--add img  {
-  padding: 0;
+
+.currencyTable__item--add img  {
   cursor: pointer;
 }
-.currency-list__item--symbol .link {
-  cursor: pointer; 
-  text-decoration: none;
-}
 
-.currency-list__item--symbol .link:hover {
-  text-decoration: underline; 
-  color: #007bff; 
+.currencyTable__item--symbol a {
+  text-decoration: none;
+  color: inherit;
+  color: #0158b5;
 }
-.currencyInfo {
-  padding-top: 30px;
-}
-.currencyInfo__title, .modalPortfolio__title {
+.currencyInfo__title{
   font-size: 26px;
   color: #007bff; 
   font-weight: bold;
-  
 }
 .countCurrency {
   background-color: #ddd;
+  padding: 15px 0;
+}
+.countCurrency__title {
+  margin-right: 10px;
 }
 
-
-
-
-.currencyInfoTable {
+.currencyInfoTable, .portfolio__table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
 }
 
-.currencyInfoTable th, .currencyInfoTable td {
+.currencyInfoTable th, .currencyInfoTable td , .portfolio__table th, .portfolio__table td{
   padding: 12px;
   border: 1px solid #ddd;
   text-align: left;
 }
 
-.currencyInfoTable thead {
+.currencyInfoTable thead, .portfolio__table thead {
   background-color: #f4f4f4;
   font-weight: bold;
 }
@@ -124,28 +116,25 @@
 .currencyInfoTable tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
-
+.portfolio__table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+.portfolio__table tbody tr:hover {
+  background-color: #e6f7ff;
+}
 .currencyInfoTable tbody tr:hover {
   background-color: #e6f7ff;
 }
 
-.positive {
-  color: green;
-  font-weight: bold;
-}
 
-.negative {
-  color: red;
-  font-weight: bold;
-}
-.currencyInfo__button, .modalPortfolio__button {
+.currencyInfo__button, .buyingCurrency__button {
   padding: 7px;
   margin-top: 30px;
   cursor: pointer;
   background-color: #007bff;
   border: 0px;
   border-radius: 5px;
-
+ color: #ffffff;
 }
 .currencyInfo__button a {
   color: inherit;
@@ -170,7 +159,7 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.75); 
 }
-.modalPortfolio {
+.portfolio {
   
   padding: 30px;
  position: relative;
@@ -178,18 +167,34 @@
   flex-direction: column;
   align-items: center;
 }
-.modalPortfolio__text {
+
+.portfolio__text {
   margin-top: 30px;
   margin-bottom: 20px;
 }
-.modalPortfolio__input {
+.portfolio__input {
 
   min-width: 300px;
 }
-.modalPortfolio__close-button {
+.portfolio__close-button {
   position: absolute;
   right: 30px;
-}
-.modalPortfolio__close-button {
   cursor: pointer;
+}
+.portfolio__delete-button {
+  cursor: pointer;
+}
+.currencyChart {
+  padding-top: 30px;
+}
+.currencyChart {
+    display: flex;
+    justify-content: center;
+    
+}
+.portfolio__table th, .portfolio__table td {
+  text-align: center;
+}
+.portfolio__table {
+  margin-bottom: 20px;
 }

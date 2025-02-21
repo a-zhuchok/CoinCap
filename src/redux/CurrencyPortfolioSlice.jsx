@@ -10,11 +10,15 @@ const AddCurrencySlice = createSlice({
   reducers: {
     addCurrency: (state, action) => {
       state.currencyPortfolio = [...state.currencyPortfolio, action.payload];
+    },
+    deleteCurrency: (state, action) => {
       
-      console.log('ssssss',state.currencyPortfolio )
+      state.currencyPortfolio = state.currencyPortfolio.filter((currency) => currency.name !== action.payload)
+      console.log(state.currencyPortfolio )
+      
     },
   },
 });
 
-export const { addCurrency } = AddCurrencySlice.actions;
+export const { addCurrency, deleteCurrency } = AddCurrencySlice.actions;
 export default AddCurrencySlice.reducer;

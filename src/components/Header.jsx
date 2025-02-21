@@ -1,13 +1,13 @@
 import React from 'react';
-import PopularCurrnce from './PopularCurrency';
+import PopularCurrency from './PopularCurrency';
 import Total from './Total';
 
-const Header=({data}) =>{
-
+const Header = () => {
+  
   return (
     <div class='header'>
-        <PopularCurrnce data={data}/>
-        <Total/>
+      <PopularCurrency />
+      <Total />
     </div>
   )
 }
