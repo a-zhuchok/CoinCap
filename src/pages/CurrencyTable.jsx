@@ -67,7 +67,7 @@ const CurrencyTable = () => {
       </Modal>
       <div>
         {Array.from({ length: totalPages }, (_, index) => (
-          <button key={index} onClick={() => handlePageChange(index + 1)} disabled={currentPage === index + 1}>{index + 1}</button>
+          <button class='currencyTable__pagination' key={index} onClick={() => handlePageChange(index + 1)} disabled={currentPage === index + 1}>{index + 1}</button>
         ))}
       </div>
     </div>

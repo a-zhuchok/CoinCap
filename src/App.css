@@ -5,44 +5,57 @@
   text-align: center;
   font-family: Arial, sans-serif;
 }
+
 .positive {
   color: green;
 }
+
 .negative {
   color: red;
 }
+
 .header {
   display: flex;
   justify-content: space-around;
 }
+
 .total {
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 .total__value {
   padding-left: 10px;
   color: #007bff
 }
-.popularCurrency__title, .portfolio__title, .total__title  {
-  font-weight: 600; 
+
+.popularCurrency__title,
+.portfolio__title,
+.total__title,
+.buyingCurrency__title {
+  font-weight: 600;
 }
+
 .popularCurrency__items {
   margin-top: 15px;
   display: flex;
   gap: 20px;
 }
+
 .popularCurrency__item {
   display: flex;
   flex-direction: column;
 }
-.currencyTable, .currencyInfo {
+
+.currencyTable,
+.currencyInfo {
   padding: 20px;
 }
 
 .currencyTable__table {
   width: 100%;
-  border-collapse: collapse; 
+  border-collapse: collapse;
   margin: 20px 0;
   font-size: 16px;
   text-align: center;
@@ -50,31 +63,31 @@
 
 .currencyTable__table th,
 .currencyTable__table td {
-  border: 1px solid #ddd; 
-  padding: 10px; 
+  border: 1px solid #ddd;
+  padding: 10px;
   text-align: center;
 }
 
 .currencyTable__table th {
-  background-color: #007bff; 
-  color: white; 
+  background-color: #007bff;
+  color: white;
   text-align: center;
 }
 
 .currencyTable__table td {
-  text-align: center; 
+  text-align: center;
 }
 
 .currencyTable__table tr:nth-child(even) {
-  background-color: #f2f2f2; 
+  background-color: #f2f2f2;
 }
 
 .currencyTable__table tr:hover {
-  background-color: #ddd; 
-  transition: background-color 0.3s ease; 
+  background-color: #ddd;
+  transition: background-color 0.3s ease;
 }
 
-.currencyTable__item--add img  {
+.currencyTable__item--add img {
   cursor: pointer;
 }
 
@@ -83,32 +96,40 @@
   color: inherit;
   color: #0158b5;
 }
-.currencyInfo__title{
+
+.currencyInfo__title {
   font-size: 26px;
-  color: #007bff; 
+  color: #007bff;
   font-weight: bold;
 }
+
 .countCurrency {
   background-color: #ddd;
   padding: 15px 0;
 }
+
 .countCurrency__title {
   margin-right: 10px;
 }
 
-.currencyInfoTable, .portfolio__table {
+.currencyInfoTable,
+.portfolio__table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
 }
 
-.currencyInfoTable th, .currencyInfoTable td , .portfolio__table th, .portfolio__table td{
+.currencyInfoTable th,
+.currencyInfoTable td,
+.portfolio__table th,
+.portfolio__table td {
   padding: 12px;
   border: 1px solid #ddd;
   text-align: left;
 }
 
-.currencyInfoTable thead, .portfolio__table thead {
+.currencyInfoTable thead,
+.portfolio__table thead {
   background-color: #f4f4f4;
   font-weight: bold;
 }
@@ -116,53 +137,61 @@
 .currencyInfoTable tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
+
 .portfolio__table tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
+
 .portfolio__table tbody tr:hover {
   background-color: #e6f7ff;
 }
+
 .currencyInfoTable tbody tr:hover {
   background-color: #e6f7ff;
 }
 
 
-.currencyInfo__button, .buyingCurrency__button {
+.currencyInfo__button,
+.buyingCurrency__button {
   padding: 7px;
   margin-top: 30px;
   cursor: pointer;
   background-color: #007bff;
   border: 0px;
   border-radius: 5px;
- color: #ffffff;
+  color: #ffffff;
 }
+
 .currencyInfo__button a {
   color: inherit;
   text-decoration: none;
 }
+
 .modal {
-  z-index: 1000; 
-  position: fixed; 
-  top: 50%; 
-  left: 50%; 
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background: white;
-  padding: 20px; 
+  padding: 20px;
   border-radius: 8px;
 }
+
 .modal__overlay {
-  z-index: 999; 
-  position: fixed; 
-  top: 0; 
+  z-index: 999;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75); 
+  background: rgba(0, 0, 0, 0.75);
 }
-.portfolio {
-  
+
+.portfolio,
+.buyingCurrency {
   padding: 30px;
- position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -172,29 +201,45 @@
   margin-top: 30px;
   margin-bottom: 20px;
 }
-.portfolio__input {
 
+.portfolio__input {
   min-width: 300px;
 }
-.portfolio__close-button {
+
+.portfolio__delete-button {
+  cursor: pointer;
+}
+
+.currencyChart {
+  padding-top: 30px;
+}
+
+.currencyChart {
+  display: flex;
+  justify-content: center;
+
+}
+
+.portfolio__table th,
+.portfolio__table td {
+  text-align: center;
+}
+
+.portfolio__table {
+  margin-bottom: 20px;
+}
+
+.portfolio__close-button,
+.buyingCurrency__close-button {
   position: absolute;
   right: 30px;
   cursor: pointer;
 }
-.portfolio__delete-button {
-  cursor: pointer;
-}
-.currencyChart {
-  padding-top: 30px;
-}
-.currencyChart {
-    display: flex;
-    justify-content: center;
-    
-}
-.portfolio__table th, .portfolio__table td {
-  text-align: center;
-}
-.portfolio__table {
+
+.buyingCurrency__title {
   margin-bottom: 20px;
+}
+
+.currencyTable__pagination {
+  cursor: pointer;
 }
