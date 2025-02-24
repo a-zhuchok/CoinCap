@@ -10,6 +10,17 @@ const AddCurrencySlice = createSlice({
   reducers: {
     addCurrency: (state, action) => {
       const { name, count, price } = action.payload;
+      if (
+        !name || 
+        typeof count !== 'number' || 
+        typeof price !== 'number' || 
+        isNaN(count) || 
+        isNaN(price) || 
+        count <= 0 || 
+        price <= 0
+      ) {
+        return; 
+      }
       const existingCurrency = state.currencyPortfolio.find(currency => currency.name === name);
       if (existingCurrency) {
         existingCurrency.count += count
