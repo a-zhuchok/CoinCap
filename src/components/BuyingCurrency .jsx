@@ -21,14 +21,14 @@ const BuyingCurrency = ({ closeModal, name, price }) => {
   };
 
   return (
-    <div class='buyingCurrency '>
+    <div className='buyingCurrency '>
       <img className='buyingCurrency__close-button' onClick={closeModal} src={close} width={20} alt='close' />
-      <span class='buyingCurrency__title'>Купить {name}</span>
-      <span class='buyingCurrency__text'>Введите количество:</span>
-      <input class='buyingCurrency__input' value={count} onChange={handleInputChange} onKeyDown={handleKeyDown}></input>
-      <button class='buyingCurrency__button' onClick={() => handleAddCurrency(name, price, count)}>Купить</button>
+      <span className='buyingCurrency__title'>Купить {name}</span>
+      <span className='buyingCurrency__text'>Введите количество:</span>
+      <input className='buyingCurrency__input' value={count} onChange={handleInputChange} onKeyDown={handleKeyDown}></input>
+      <button className='buyingCurrency__button' onClick={() => handleAddCurrency(name, price, count)}>Купить</button>
     </div>
   )
 }
 
-export default BuyingCurrency 
+export default BuyingCurrency;

@@ -6,8 +6,9 @@ const CurrencyChart = () => {
   const { data, status } = useSelector(state => state.currencyHistory);
 
   return (
-    <div class='currencyChart'>
+    <div className='currencyChart'>
       {status === 'loading' && <p>Загрузка данных...</p>}
+      {status === 'failed' && <p>Ошибка. Что-то пошло не так...</p>}
       {status === 'succeeded' && (
         <ResponsiveContainer height={300} width={500}>
           <LineChart data={data.map(item => ({
@@ -26,4 +27,4 @@ const CurrencyChart = () => {
   )
 }
 
-export default CurrencyChart
+export default CurrencyChart;

@@ -4,7 +4,7 @@ const CurrencyInfoTable = ({ data }) => {
   const formatNum = (num) => { return (num / 1_000_000_000).toFixed(2) };
 
   return (
-    <table class='currencyInfoTable'>
+    <table className='currencyInfoTable'>
       <thead>
         <tr>
           <th>Информация</th>
@@ -30,7 +30,7 @@ const CurrencyInfoTable = ({ data }) => {
         </tr>
         <tr>
           <td>Изменение цены за 24 часа</td>
-          <td  class={`currencyInfoTable__item--changePercent24Hr ${parseFloat(data.changePercent24Hr) < 0 ? 'negative' : 'positive' }`}>
+          <td  className={`currencyInfoTable__item--changePercent24Hr ${parseFloat(data.changePercent24Hr) < 0 ? 'negative' : 'positive' }`}>
             {parseFloat(data.changePercent24Hr).toFixed(2).replace('.', ',')} %
           </td>
         </tr>
@@ -53,4 +53,4 @@ const CurrencyInfoTable = ({ data }) => {
   )
 }
 
-export default CurrencyInfoTable
+export default CurrencyInfoTable;

@@ -29,10 +29,11 @@ const CurrencyTable = () => {
   const closeModal = () => {
     setModalIsOpen(false)
   };
+  Modal.setAppElement('#root');
 
   return (
-    <div class='currencyTable'>
-      <table class='currencyTable__table'>
+    <div className='currencyTable'>
+      <table className='currencyTable__table'>
         <thead>
           <tr>
             <th>№</th>
@@ -45,33 +46,33 @@ const CurrencyTable = () => {
             <th></th>
           </tr>
         </thead>
-        <tbody class='currencyTable__items'>
+        <tbody className='currencyTable__items'>
           {currentItems.map((value) => (
             <tr key={value.id}>
-              <td class='currencyTable__item--rank'>{value.rank}</td>
-              <td class='currencyTable__item--symbol'><Link to={`/CurrencyInfo/${value.id}`} >{value.symbol}</Link></td>
-              <td class='currencyTable__item--name'>{value.name}</td>
-              <td class='currencyTable__item--vwap24Hr'>{parseFloat(value.vwap24Hr).toFixed(2).replace('.', ',')} $</td>
-              <td  class={`currencyTable__item--changePercent24Hr ${parseFloat(value.changePercent24Hr) < 0 ? 'negative' : 'positive' }`}>{parseFloat(value.changePercent24Hr).toFixed(2).replace('.', ',')} %</td>
-              <td class='currencyTable__item--marketCapUsd'>{parseFloat(formatNum(value.marketCapUsd)).toLocaleString()} млрд $</td>
-              <td class='currencyTable__item--priceUsd'>{parseFloat(value.priceUsd).toFixed(2).replace('.', ',')} $</td>
-              <td class='currencyTable__item--add'>
+              <td className='currencyTable__item--rank'>{value.rank}</td>
+              <td className='currencyTable__item--symbol'><Link to={`/CurrencyInfo/${value.id}`} >{value.symbol}</Link></td>
+              <td className='currencyTable__item--name'>{value.name}</td>
+              <td className='currencyTable__item--vwap24Hr'>{parseFloat(value.vwap24Hr).toFixed(2).replace('.', ',')} $</td>
+              <td className={`currencyTable__item--changePercent24Hr ${parseFloat(value.changePercent24Hr) < 0 ? 'negative' : 'positive' }`}>{parseFloat(value.changePercent24Hr).toFixed(2).replace('.', ',')} %</td>
+              <td className='currencyTable__item--marketCapUsd'>{parseFloat(formatNum(value.marketCapUsd)).toLocaleString()} млрд $</td>
+              <td className='currencyTable__item--priceUsd'>{parseFloat(value.priceUsd).toFixed(2).replace('.', ',')} $</td>
+              <td className='currencyTable__item--add'>
                 <img src={plus}  onClick={() =>openModal(value.symbol, parseFloat(value.priceUsd).toFixed(2))} width={15} height={15} alt='plus'/>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Modal class='modal' isOpen={modalIsOpen} overlayClassName='modal__overlay' onRequestClose={closeModal} style={{ content: { width: '500px', height: '400px', margin: 'auto' } }}>
+      <Modal className='modal' isOpen={modalIsOpen} overlayClassName='modal__overlay' onRequestClose={closeModal} style={{ content: { width: '500px', height: '400px', margin: 'auto' } }}>
         <BuyingCurrency  closeModal={closeModal} name={modalCurrentName} price={modalCurrentPrice} />
       </Modal>
       <div>
         {Array.from({ length: totalPages }, (_, index) => (
-          <button class='currencyTable__pagination' key={index} onClick={() => handlePageChange(index + 1)} disabled={currentPage === index + 1}>{index + 1}</button>
+          <button className='currencyTable__pagination' key={index} onClick={() => handlePageChange(index + 1)} disabled={currentPage === index + 1}>{index + 1}</button>
         ))}
       </div>
     </div>
   )
 }
 
-export default CurrencyTable
+export default CurrencyTable;

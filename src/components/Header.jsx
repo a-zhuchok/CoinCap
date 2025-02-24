@@ -5,11 +5,11 @@ import Total from './Total';
 const Header = () => {
   
   return (
-    <div class='header'>
+    <div className='header'>
       <PopularCurrency />
       <Total />
     </div>
   )
 }
 
-export default Header
+export default Header;

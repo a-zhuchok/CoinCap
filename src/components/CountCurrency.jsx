@@ -20,12 +20,12 @@ const CountCurrency = ({ name, price }) => {
   };
 
   return (
-    <div class='countCurrency'>
-      <span class='countCurrency__title'>Введите количество:</span>
-      <input class='countCurrency__input' value={count} onChange={handleInputChange} onKeyDown={handleKeyDown}></input>
-      <button onClick={() => handleAddCurrency(name, price, count)}>Купить</button>
+    <div className='countCurrency'>
+      <span className='countCurrency__title'>Введите количество:</span>
+      <input className='countCurrency__input' value={count} onChange={handleInputChange} onKeyDown={handleKeyDown}></input>
+      <button className='countCurrency__button' onClick={() => handleAddCurrency(name, price, count)}>Купить</button>
     </div>
   )
 }
 
-export default CountCurrency
+export default CountCurrency;

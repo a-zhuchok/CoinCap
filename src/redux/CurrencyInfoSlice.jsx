@@ -1,21 +1,23 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const token = 'cdb49b89-ee17-47a4-91b3-22ac873458d3'
+const API_URL = import.meta.env.VITE_APP_URL;
+const token = import.meta.env.VITE_APP_API_KEY;
+
 const headers = {
     Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json'
 };
 const config = { headers };
 const getCurrencyInfo = async id => {
-    const response = await axios.get(`https://api.coincap.io/v2/assets/${id}`, config)
+    const response = await axios.get(API_URL + `/${id}`, config)
     return response
 };
 const fetchGetCurrencyInfo = createAsyncThunk('currencyInfo/fetchGetCurrencyInfo', async id => {
     const { data } = await getCurrencyInfo(id)
-    console.log(data)
     return data
 });
+
 const CurrencyInfoSlice = createSlice({
     name: 'currencyInfo',
     initialState: {},
@@ -29,8 +31,13 @@ const CurrencyInfoSlice = createSlice({
             })
             .addCase(fetchGetCurrencyInfo.pending, (state) => {
                 state.status = 'loading';
+                state.error = null;
+            })
+            .addCase(fetchGetCurrencyInfo.rejected, (state) => {
+                state.status = 'failed';
+                state.error = action.payload;
             })
     },
 });
-export { fetchGetCurrencyInfo }
+export { fetchGetCurrencyInfo };
 export default CurrencyInfoSlice.reducer;

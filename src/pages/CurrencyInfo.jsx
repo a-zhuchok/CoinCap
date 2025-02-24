@@ -14,22 +14,23 @@ const CurrencyInfo = () => {
   useEffect(() => {
     dispatch(fetchGetCurrencyInfo(symbol))
     dispatch(fetchGetCurrencyHistory(symbol))
-  }, []);
+  }, [dispatch]);
   const { data, status } = useSelector(state => state.currencyInfo);
 
   return (
     <>
       {status === 'loading' && <p>Загрузка...</p>}
+      {status === 'failed' && <p>Ошибка. Что-то пошло не так...</p>}
       {status === 'succeeded' &&
-        <div class='currencyInfo'>
-          <p class='currencyInfo__title'>{data.name}</p>
+        <div className='currencyInfo'>
+          <p className='currencyInfo__title'>{data.name}</p>
           <CountCurrency name={data.name} price={parseFloat(data.priceUsd).toFixed(2)} />
           <CurrencyInfoTable data={data} />
           <CurrencyChart id={data.id} />
-          <button class='currencyInfo__button'><Link to={`/`}>Назад</Link></button>
+          <button className='currencyInfo__button'><Link to={`/`}>Назад</Link></button>
         </div>}
     </>
   )
 }
 
-export default CurrencyInfo
+export default CurrencyInfo;

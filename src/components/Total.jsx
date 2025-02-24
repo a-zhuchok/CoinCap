@@ -15,19 +15,20 @@ const Total = () => {
   const closeModal = () => {
     setModalIsOpen(false)
   };
+  Modal.setAppElement('#root');
   
   return (
-    <div class='total'>
+    <div className='total'>
       <img src={total} width={40} height={40} onClick={openModal} alt='total' />
       <div>
-        <span class='total__title'>Итого:</span>
-        <span class='total__value'>{totalValue} $</span>
+        <span className='total__title'>Итого:</span>
+        <span className='total__value'>{totalValue} $</span>
       </div>
-      <Modal class='modal' isOpen={modalIsOpen} overlayClassName='modal__overlay' onRequestClose={closeModal} style={{ content: { width: '600px', height: '400px', margin: 'auto' } }}>
+      <Modal className='modal' isOpen={modalIsOpen} overlayClassName='modal__overlay' onRequestClose={closeModal} style={{ content: { width: '600px', height: '400px', margin: 'auto' } }}>
         <Portfolio closeModal={closeModal} />
       </Modal>
     </div>
   )
 }
 
-export default Total
+export default Total;

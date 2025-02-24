@@ -9,12 +9,13 @@ import './App.css';
 
 const App = () => {
   const dispatch = useDispatch();
-  useEffect(() => {dispatch(fetchGetCurrencyList())}, []);
+  useEffect(() => { dispatch(fetchGetCurrencyList()) }, [dispatch]);
   const { status } = useSelector(state => state.currencyList);
 
   return (
     <>
       {status === 'loading' && <p>Загрузка...</p>}
+      {status === 'failed' && <p>Ошибка. Что-то пошло не так...</p>}
       {status === 'succeeded' &&
         <div>
           <Header />
@@ -27,4 +28,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
