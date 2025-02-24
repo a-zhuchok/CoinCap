@@ -10,6 +10,10 @@ const CountCurrency = ({ name, price }) => {
   };
   const handleAddCurrency = (name, price, count) => {
     const countNumber = Number(count);
+    if (isNaN(countNumber) || countNumber <= 0) {
+      alert('Пожалуйста, введите корректное количество')
+      return
+    }
     dispatch(addCurrency({ name: name, price: price, count: countNumber, total: countNumber * price }))
     setCount('')
   };

@@ -298,25 +298,3 @@
 
 }
 
-@media (max-width: 480px) {
-
-  .currencyInfoTable,
-  .portfolio__table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    font-size: 12px;
-  }
-
-  .currencyInfoTable th,
-  .currencyInfoTable td,
-  .portfolio__table th,
-  .portfolio__table td {
-    padding: 6px;
-  }
-
-  .currencyInfoTable th,
-  .portfolio__table th {
-    font-size: 14px;
-  }
-}
