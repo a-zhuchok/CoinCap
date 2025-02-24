@@ -25,6 +25,10 @@
   gap: 20px;
 }
 
+.total img {
+  cursor: pointer;
+}
+
 .total__value {
   padding-left: 10px;
   color: #007bff
@@ -242,4 +246,77 @@
 
 .currencyTable__pagination {
   cursor: pointer;
+}
+
+@media screen and (max-width:690px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .total {
+    margin-top: 40px;
+  }
+
+  .currencyTable__table td:nth-child(3),
+  .currencyTable__table td:nth-child(4),
+  .currencyTable__table td:nth-child(6),
+  .currencyTable__table th:nth-child(3),
+  .currencyTable__table th:nth-child(4),
+  .currencyTable__table th:nth-child(6) {
+    display: none;
+  }
+
+  .currencyTable {
+    padding: 0px;
+  }
+
+  .portfolio,
+  .buyingCurrency {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+  }
+
+  .portfolio__close-button,
+  .buyingCurrency__close-button {
+    right: -60px;
+  }
+
+  .countCurrency {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .countCurrency input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .currencyInfoTable,
+  .portfolio__table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .currencyInfoTable th,
+  .currencyInfoTable td,
+  .portfolio__table th,
+  .portfolio__table td {
+    padding: 6px;
+  }
+
+  .currencyInfoTable th,
+  .portfolio__table th {
+    font-size: 14px;
+  }
 }
